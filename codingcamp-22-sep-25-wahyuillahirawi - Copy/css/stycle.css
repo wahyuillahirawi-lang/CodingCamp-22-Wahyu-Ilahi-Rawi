@@ -1,0 +1,47 @@
+.logo-icon {
+
+
+
+    height: 75px;
+
+
+    width: 75px;
+
+
+    background-color: cyan;
+
+
+    border-radius: 50%;
+
+
+    background-image: url(https://serumpun.babelprov.go.id/sites/default/files/styles/full_gallery/public/images/gallery/004_lorem.jpg?itok=fb0XYhZK);
+
+
+    background-size: cover;
+
+
+}
+
+
+
+
+
+.main-header {
+
+
+    display: flex
+
+
+;
+
+
+    justify-content: space-between;
+
+
+    align-items: center;
+
+
+    
+
+
+}

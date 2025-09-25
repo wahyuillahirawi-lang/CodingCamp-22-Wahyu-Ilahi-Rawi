@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+
+
+
+<html lang="id" class="light">
+
+
+<head>
+
+
+  <meta charset="UTF-8" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  <title>Wahyu Illahi Rawi | Portfolio</title>
+
+
+  <meta name="description" content="Portfolio Wahyu Illahi Rawi - Mahasiswa Informatika & Web Developer. Menampilkan karya, pengalaman, dan kontak.">
+
+
+
+
+
+  <!-- Tailwind CDN dengan dark mode -->
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+  <script>
+
+
+    tailwind.config = {
+
+
+      darkMode: 'class'
+
+
+    }
+
+
+  </script>
+
+
+
+
+
+  <style>
+
+
+    /* Animasi teks */
+
+
+    .typing-gradient {
+
+
+      display: inline-block;
+
+
+      white-space: nowrap;
+
+
+      overflow: hidden;
+
+
+      border-right: 3px solid #fff;
+
+
+      font-weight: bold;
+
+
+      background: linear-gradient(90deg, #ec4899, #f59e0b, #3b82f6, #10b981);
+
+
+      background-size: 400%;
+
+
+      -webkit-background-clip: text;
+
+
+      -webkit-text-fill-color: transparent;
+
+
+      animation: typing 4s steps(30, end), blink 0.7s step-end infinite, gradientMove 6s ease infinite;
+
+
+    }
+
+
+    @keyframes typing { from { width: 0 } to { width: 100% } }
+
+
+    @keyframes blink { 50% { border-color: transparent } }
+
+
+    @keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+
+
+
+
+    /* Modal slide */
+
+
+    .modal-slide { transform: translateX(100%); transition: transform 0.4s ease-in-out; }
+
+
+    .modal-slide.active { transform: translateX(0); }
+
+
+
+
+
+    /* Overlay modal */
+
+
+    #overlay { display: none; }
+
+
+    #overlay.active { display: block; }
+
+
+
+
+
+    html { scroll-behavior: smooth; }
+
+
+  </style>
+
+
+</head>
+
+
+
+
+
+<body class="bg-gradient-to-b from-pink-50 via-white to-pink-100 text-gray-800 dark:from-gray-900 dark:via-gray-800 dark:to-black dark:text-gray-200 font-sans">
+
+
+
+
+
+  <!-- Header -->
+
+
+  <header class="flex items-center justify-between p-5 bg-gradient-to-r from-pink-500 to-pink-700 text-white shadow-lg fixed w-full top-0 z-50 dark:from-gray-800 dark:to-gray-900">
+
+
+    <div class="flex items-center gap-3">
+
+
+      <img src="img/wahyugacor.jpg" alt="Foto Profil Wahyu Illahi Rawi" class="w-12 h-12 rounded-full">
+
+
+      <span class="font-bold text-2xl">Wahyu Ilahi Rawi</span>
+
+
+    </div>
+
+
+    <nav class="flex items-center gap-6">
+
+
+      <ul class="flex gap-6">
+
+
+        <li><a class="hover:text-yellow-300" href="#home">Home</a></li>
+
+
+        <li><a class="hover:text-yellow-300" href="#profile">Profile</a></li>
+
+
+        <li><a class="hover:text-yellow-300" href="#portfolio">Portfolio</a></li>
+
+
+        <li><a class="hover:text-yellow-300" href="#contact">Contact</a></li>
+
+
+      </ul>
+
+
+      <!-- Tombol Dark Mode -->
+
+
+      <button id="themeToggle" class="ml-6 bg-white text-black px-3 py-1 rounded-lg shadow hover:bg-gray-200 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600">
+
+
+        🌙
+
+
+      </button>
+
+
+    </nav>
+
+
+  </header>
+
+
+
+
+
+  <!-- Hero -->
+
+
+  <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-6 fade-in">
+
+
+    <h1 class="text-5xl md:text-6xl mb-4 typing-gradient">
+
+
+      Hi, Saya Wahyu Illahi Rawi!
+
+
+    </h1>
+
+
+    <p class="max-w-2xl text-gray-600 dark:text-gray-300 mb-8">
+
+
+Saya adalah mahasiswa aktif Program Studi Informatika di Universitas Gunadarma. Minat saya dalam dunia teknologi informasi dimulai dari ketertarikan terhadap bagaimana sistem digital bekerja secara logis dan efisien. Selama masa studi, saya mendalami berbagai aspek pemrograman, pengembangan web, dan analisis data. Beberapa proyek yang saya kerjakan mencerminkan ketertarikan saya terhadap pembuatan aplikasi yang tidak hanya fungsional, tetapi juga ramah pengguna. Saya berkomitmen untuk terus belajar dan berkontribusi di dunia digital.    </p>
+
+
+    <a href="#portfolio" class="bg-pink-600 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-pink-700 transition">
+
+
+      View My Work
+
+
+    </a>
+
+
+  </section>
+
+
+
+
+
+  <!-- Profile -->
+
+
+  <section id="profile" class="min-h-screen flex flex-col items-center justify-center px-6 py-16 bg-white dark:bg-gray-900 fade-in">
+
+
+    <img src="img/wahyugacor.jpg" alt="Foto Profil Wahyu" class="w-40 h-40 rounded-full shadow-lg border-4 border-p-400 mb-6">
+
+
+    <h2 class="text-4xl font-bold mb-4 ">Tentang Saya</h2>
+
+
+    <p class="max-w-2xl text-center text-gray-600 dark:text-gray-300 leading-relaxed">
+
+
+      Saya adalah <span class="font-bold">Wahyu Illahi Rawi</span>, Saya adalah mahasiswa aktif di bidang Teknologi Informasi yang memiliki minat dan keterampilan dalam pengembangan web, pemrograman, dan analisis data. Portofolio ini berisi kumpulan proyek yang saya kerjakan secara individu maupun dalam tim, dengan pendekatan yang sistematis dan berbasis kebutuhan pengguna. Setiap proyek mencerminkan kemampuan saya dalam menyusun solusi digital berbasis teknologi yang efektif dan efisien.. 
+
+
+    </p>
+
+
+  </section>
+
+
+
+
+
+  <!-- Portfolio -->
+
+
+  <section id="portfolio" class="min-h-screen px-6 py-16 bg-gradient-to-r from-pink-50 to-pink-100 dark:from-gray-800 dark:to-gray-900 fade-in">
+
+
+    <h2 class="text-4xl font-bold mb-10 text-center text-pink-700 dark:text-pink-400">Projek</h2>
+
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+
+      <!-- Project 1 -->
+
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transform transition cursor-pointer" onclick="openModal(1)">
+
+
+        <img src="https://www.kindpng.com/picc/m/81-814934_figma-logo-png-transparent-png.png" alt="Project 1" class="w-full h-40 object-contain mb-4 rounded">
+
+
+        <h3 class="font-bold text-xl mb-2">Project 1</h3>
+
+
+        <p class="text-gray-600 dark:text-gray-300 text-sm">Website e-commerce modern dengan sistem pembayaran otomatis.</p>
+
+
+      </div>
+
+
+      <!-- Project 2 -->
+
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transform transition cursor-pointer" onclick="openModal(2)">
+
+
+        <img src="https://tse2.mm.bing.net/th/id/OIP.i6-2AQ-mnxwGkLC5dHrKVQHaHa?rs=1&pid=ImgDetMain" alt="Project 2" class="w-full h-40 object-contain mb-4 rounded">
+
+
+        <h3 class="font-bold text-xl mb-2">Project 2</h3>
+
+
+        <p class="text-gray-600 dark:text-gray-300 text-sm">Aplikasi mobile untuk monitoring suhu & kelembapan berbasis IoT.</p>
+
+
+      </div>
+
+
+      <!-- Project 3 -->
+
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transform transition cursor-pointer" onclick="openModal(3)">
+
+
+        <img src="https://logos-world.net/wp-content/uploads/2023/01/Unity-Emblem.png" alt="Project 3" class="w-full h-40 object-contain mb-4 rounded">
+
+
+        <h3 class="font-bold text-xl mb-2">Project 3</h3>
+
+
+        <p class="text-gray-600 dark:text-gray-300 text-sm">Landing page company profile dengan desain minimalis & modern.</p>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+
+
+  <!-- Overlay -->
+
+
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
+
+
+
+
+
+  <!-- Modal -->
+
+
+  <div id="modal" class="fixed top-0 right-0 w-80 h-full bg-white dark:bg-gray-800 shadow-2xl modal-slide z-50">
+
+
+    <div class="p-6 flex flex-col h-full">
+
+
+      <h3 id="modalTitle" class="text-2xl font-bold mb-4 text-pink-700 dark:text-pink-400">Tools yang Dipakai</h3>
+
+
+      <ul id="modalContent" class="space-y-2 text-gray-700 dark:text-gray-200"></ul>
+
+
+      <button onclick="closeModal()" class="mt-auto bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Tutup</button>
+
+
+    </div>
+
+
+  </div>
+
+
+
+
+
+  <!-- Contact -->
+
+
+  <section id="contact" class="min-h-screen flex flex-col items-center justify-center px-6 py-16 bg-white dark:bg-gray-900 fade-in">
+
+
+    <h2 class="text-4xl font-bold mb-8 text-pink-600 dark:text-pink-400">KONTAK</h2>
+
+
+    
+
+
+    <form class="w-full max-w-lg bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow space-y-4">
+
+
+      <div>
+
+
+        <label for="name" class="block mb-1 font-medium">Name</label>
+
+
+        <input type="text" id="name" class="border w-full p-3 rounded focus:ring-2 focus:ring-pink-400 dark:bg-gray-700 dark:border-gray-600"/>
+
+
+      </div>
+
+
+      <div>
+
+
+        <label for="email" class="block mb-1 font-medium">Email</label>
+
+
+        <input type="email" id="email" class="border w-full p-3 rounded focus:ring-2 focus:ring-pink-400 dark:bg-gray-700 dark:border-gray-600"/>
+
+
+      </div>
+
+
+      <div>
+
+
+        <label for="message" class="block mb-1 font-medium">Message</label>
+
+
+        <textarea id="message" rows="4" class="border w-full p-3 rounded focus:ring-2 focus:ring-pink-400 dark:bg-gray-700 dark:border-gray-600"></textarea>
+
+
+      </div>
+
+
+      <button type="button" onclick="validateForm()" class="w-full bg-pink-600 text-white py-3 rounded-lg hover:bg-pink-700">
+
+
+        Send Message
+
+
+      </button>
+
+
+    </form>
+
+
+  </section>
+
+
+
+
+
+  <!-- Footer -->
+
+
+  <footer class="text-center p-6 bg-gradient-to-r from-pink-600 to-pink-700 text-white dark:from-gray-800 dark:to-gray-900">
+
+
+    &copy; 2025 <span class="font-bold">Wahyu Illahi Rawi</span>. All rights reserved.
+
+
+
+
+
+    <!-- Sosial Media -->
+
+
+    <div class="flex justify-center gap-6 mt-4">
+
+
+      <a href="https://www.instagram.com/wahyuillhr2?igsh=MWY2cWQ0MndveWVmbg== target="_blank" class="hover:scale-110 transition">
+
+
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="w-6 h-6">
+
+
+      </a>
+
+
+      <a href="https://tiktok.com/" target="_blank" class="hover:scale-110 transition">
+
+
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok" class="w-6 h-6">
+
+
+      </a>
+
+
+    </div>
+
+
+  </footer>
+
+
+
+
+
+  <!-- JS -->
+
+
+  <script>
+
+
+    // Dark mode toggle
+
+
+    const themeToggle = document.getElementById("themeToggle");
+
+
+    const html = document.documentElement;
+
+
+
+
+
+    themeToggle.addEventListener("click", () => {
+
+
+      if(html.classList.contains("dark")){
+
+
+        html.classList.remove("dark");
+
+
+        themeToggle.textContent = "🌙";
+
+
+      } else {
+
+
+        html.classList.add("dark");
+
+
+        themeToggle.textContent = "☀️";
+
+
+      }
+
+
+    });
+
+
+
+
+
+    // Modal logic
+
+
+    const modal = document.getElementById("modal");
+
+
+    const overlay = document.getElementById("overlay");
+
+
+    const modalContent = document.getElementById("modalContent");
+
+
+
+
+
+    function openModal(project) {
+
+
+      modal.classList.add("active");
+
+
+      overlay.classList.add("active");
+
+
+      modalContent.innerHTML = "";
+
+
+
+
+
+      if(project === 1){
+
+
+        modalContent.innerHTML = "<li>✔️ Figma (UI/UX)</li><li>";
+
+
+      } else if(project === 2){
+
+
+        modalContent.innerHTML = "<li>✔️ Blender</li><li>"
+
+
+      } else if(project === 3){
+
+
+        modalContent.innerHTML = "<li>✔️ Unity</li><li>";
+
+
+      }
+
+
+    }
+
+
+
+
+
+    function closeModal() {
+
+
+      modal.classList.remove("active");
+
+
+      overlay.classList.remove("active");
+
+
+    }
+
+
+
+
+
+    overlay.addEventListener("click", closeModal);
+
+
+
+
+
+    function validateForm() { alert("Pesan berhasil dikirim!"); }
+
+
+  </script>
+
+
+</body>
+
+
+</html>
